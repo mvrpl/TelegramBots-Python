@@ -29,16 +29,38 @@ while True:
             print(update['message']['text'])
             try:
                 if u'manda stack' in update['message']['text']:
-                    random_stackoverflow = json.loads(requests.get('https://api.stackexchange.com/2.2/search?pagesize=100&order=desc&min=1404172800&max=1435968000&sort=activity&tagged=python&site=stackoverflow').content)
-                    rand_id = random.randint(1, 99)
+                    try:
+                        random_stackoverflow = json.loads(requests.get('https://api.stackexchange.com/2.2/search?pagesize=100&order=desc&sort=activity&tagged=python&site=stackoverflow').content)
+                    except requests.ConnectionError:
+                        requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text='Stack Overflow temporariamente indisponível :(' ))
+                        continue
+                    rand_id = random.randint(0, 99)
                     send_random = '%s\n%s' % (random_stackoverflow['items'][rand_id]['title'], random_stackoverflow['items'][rand_id]['link'])
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=send_random ))
                 if u'sobre python' in update['message']['text']:
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text='https://pt.wikipedia.org/wiki/Python' ))
                 if u'manda twitter' in update['message']['text']:
                     results = twitter.search.tweets(q='"#python"')
+                    if 'errors' in results:
+                        requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text='Twitter temporariamente indisponível :(' ))
+                        continue
                     last_tweet = "%s:\n%s" % (results["statuses"][0]["user"]["screen_name"], 'https://twitter.com/'+results["statuses"][0]["user"]["screen_name"]+'/status/'+results["statuses"][0]["id_str"])
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=last_tweet ))
+                if u'manda github' in update['message']['text']:
+                    git_repos = json.loads(requests.get('https://api.github.com/search/repositories?q=language:python&sort=stars&order=desc').content)
+                    rand_id = random.randint(0, 29)
+                    send_github = '%s\n%s' % (git_repos['items'][rand_id]['description'], git_repos['items'][rand_id]['html_url'])
+                    requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=send_github ))
+                if u'buscar github' in update['message']['text']:
+                    keyword = update['message']['text'].split(' ', 2)
+                    git_repos_search = json.loads(requests.get('https://api.github.com/search/repositories?q='+keyword[2]+'+language:python&sort=stars&order=desc').content)
+                    rand_id = random.randint(0, len(git_repos_search['items']))
+                    try:
+                        send_github = '%s\n%s' % (git_repos_search['items'][rand_id]['description'], git_repos_search['items'][rand_id]['html_url'])
+                    except IndexError:
+                        requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text='Nada Encontrado' ))
+                        continue
+                    requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=send_github ))
             except KeyError as e:
                 print(e)
                 continue
