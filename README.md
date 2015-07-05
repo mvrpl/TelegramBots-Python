@@ -1,5 +1,21 @@
 # TelegramBots
 
+### Accessing Python Bot
+* [Download](http://telegram.org) Telegram app for your device.
+* Add [@TelePyBot](http://telegram.me/TelePyBot) and talk.
+
+### Using Python Bot
+###### Available Commands:
+* /enviaGithub: Sends a random python repository.
+* /buscarGithub "Text": Type text to search for a repository on github without quotes.
+* /enviaStack: Sends a random stackoverflow about Python.
+* /sobrePython: Send Wikipedia article about Python.
+* /enviaTwitter: Send a recent tweet with the hashtag Python.
+
+### Using SMS Bot - Only Brazil
+###### Available Commands:
+* /enviaSMS 11999999999 Hello: Send an SMS to any Brazil cellphone. Need an account in [Sinch](http://sinch.com) and credits, do not use App in Sandbox.
+
 ### Como acessar Python Bot
 * Faça o [Download](http://telegram.org) do Telegram para seu device.
 * Adicione [@TelePyBot](http://telegram.me/TelePyBot) e converse.
