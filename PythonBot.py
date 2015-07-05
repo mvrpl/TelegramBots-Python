@@ -6,6 +6,9 @@ import pickle
 import os
 import random
 import tokens
+from twitter import Twitter, OAuth  # easy_install twitter_oauth
+
+twitter = Twitter(auth=OAuth(tokens.access_key, tokens.access_secret, tokens.consumer_key, tokens.consumer_secret))
 
 if os.path.isfile('last_update.txt') == True:
     file = open('last_update.txt', 'r')
@@ -32,6 +35,10 @@ while True:
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=send_random ))
                 if u'sobre python' in update['message']['text']:
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text='https://pt.wikipedia.org/wiki/Python' ))
+                if u'manda twitter' in update['message']['text']:
+                    results = twitter.search.tweets(q='"#python"')
+                    last_tweet = "%s:\n%s" % (results["statuses"][0]["user"]["screen_name"], 'https://twitter.com/'+results["statuses"][0]["user"]["screen_name"]+'/status/'+results["statuses"][0]["id_str"])
+                    requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=last_tweet ))
             except KeyError as e:
                 print(e)
                 continue
