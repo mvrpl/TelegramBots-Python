@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from sinchsms import SinchSMS
+from sinchsms import SinchSMS # pip install sinchsms
 import tokens
-import pickle
+import pickle # pip install pickle
 import json
 import requests
 import os
@@ -25,7 +25,10 @@ while True:
             file.close()
             print(update['message']['text'])
             try:
-                if u'/enviaSMS' in update['message']['text']:
+                if u'/start' in update['message']['text']:
+                    help_bot = u'Olá\nPara enviar um SMS digite /enviarSMS 11999999999 Olá Tudo Bem?'
+                    requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=help_bot ))
+                if u'/enviarSMS' in update['message']['text']:
                     keyword = update['message']['text'].split(' ', 2)
                     number = '+55'+keyword[1]
                     message = keyword[2]
