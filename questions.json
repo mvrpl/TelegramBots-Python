@@ -1,0 +1,237 @@
+[
+  {
+    "question": "Quem inventou a linguagem de programa\u00e7\u00e3o Python ?",
+    "correct_option": 3,
+    "options": [
+      "Rasmus Lerdorf",
+      "Yukihiro Matsumoto",
+      "Brendan Eich",
+      "Guido van Rossum"
+    ]
+  },
+  {
+    "question": "s = \"ABC\"\nprint(s + \"D\" * 4), o que ser\u00E1 impresso ?",
+    "correct_option": 1,
+    "options": [
+      "ABC = ABCABCABCAB",
+      "ABCx4 = ABCABCABCABC",
+      "ABCx4 = ABCABCAB",
+      "ABCx = ABCABCABC"
+    ]
+  },
+  {
+    "question": "print(\"%5f\" % 5), o que ser\u00E1 impresso ?",
+    "correct_option": 0,
+    "options": [
+      "5.000000",
+      "5.000",
+      "5",
+      "5.00"
+    ]
+  },
+  {
+    "question": "L = list(range(101))\ndel L[1:99]\nprint(L), o que ser\u00E1 impresso?",
+    "correct_option": 2,
+    "options": [
+      "[0, 99, 101]",
+      "[1, 99, 100]",
+      "[0, 99, 100]",
+      "[1, 99, 101]"
+    ]
+  },
+  {
+    "question": "tupla = (\"a\", [\"b\", \"c\", \"d\"])\nprint(len(tupla)), qual valor ser\u00E1 impresso ?",
+    "correct_option": 2,
+    "options": [
+      "4",
+      "3",
+      "2"
+    ]
+  },
+  {
+    "question": "t = \"um tigre, dois tigres, tr\u00EAs tigres\"\nprint(t.count(\"tigre\"), t.count(\"tigres\")), quais valores ser\u00E3o impressos ?",
+    "correct_option": 3,
+    "options": [
+      "1, 2",
+      "1 2",
+      "3, 2",
+      "3 2"
+    ]
+  },
+  {
+    "question": "umter\u00E7o = \"\\u2153\"\numter\u00E7o.isdigit(), retorna True ou False ?",
+    "correct_option": 1,
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "question": "\"X{0:^10}X\".format(\"123\"), o que ser\u00E1 impresso ?",
+    "correct_option": 2,
+    "options": [
+      "'X     '123'     X'",
+      "X  123  X",
+      "'X   123    X'"
+    ]
+  },
+  {
+    "question": "import os\nos.makedirs(\"av\u00F4/pai/filho\"), o que acontecer\u00E1 ?",
+    "correct_option": 1,
+    "options": [
+      "Ser\u00E3o criadas 3 pastas: av\u00F4, pai e filho",
+      "Ser\u00E3o criadas 3 pastas: pasta filho dentro da pasta pai dentro da pasta av\u00F4.",
+      "Ser\u00E1 criada uma pasta com o nome \"av\u00F4/pai/filho\""
+    ]
+  },
+  {
+    "question": "from datetime import datetime, date, time\nd = date(2005, 7, 14)\nt = time(12, 30)\nprint(datetime.combine(d, t)), o que ser\u00E1 impresso ?",
+    "correct_option": 0,
+    "options": [
+      "2005-07-14 12:30:00",
+      "2005-07-14",
+      "12:30:00",
+      "2005-07-1412:30:00"
+    ]
+  },
+  {
+    "question": "from datetime import datetime\ndt = datetime.strptime(\"21/11/06 16:30\", \"%d/%m/%y %H:%M\")\nprint(dt.strftime(\"%A, %d. %B %Y %I:%M%p\")), o que ser\u00E1 impresso ?",
+    "correct_option": 1,
+    "options": [
+      "2006-11-21 16:30:00",
+      "Tuesday, 21. November 2006 04:30PM",
+      "2006-11-21 04:30PM",
+      "Tuesday, 21. November 2006 16:30"
+    ]
+  },
+  {
+    "question": "from datetime import timedelta\nano = timedelta(days=365)\nquinze_anos = 15 * ano\nprint(quinze_anos), o que ser\u00E1 impresso ?",
+    "correct_option": 3,
+    "options": [
+      "5475",
+      "15 years, 0:00:00",
+      "3650 days, 0:00:00",
+      "5475 days, 0:00:00"
+    ]
+  },
+  {
+    "question": "Quem inventou a linguagem de programa\u00e7\u00e3o Ruby ?",
+    "correct_option": 1,
+    "options": [
+      "Rasmus Lerdorf",
+      "Yukihiro Matsumoto",
+      "Brendan Eich",
+      "Guido van Rossum"
+    ]
+  },
+  {
+    "question": "Quem inventou a linguagem de programa\u00e7\u00e3o Ruby ?",
+    "correct_option": 1,
+    "options": [
+      "Rasmus Lerdorf",
+      "Yukihiro Matsumoto",
+      "Brendan Eich",
+      "Guido van Rossum"
+    ]
+  },
+  {
+    "question": "Quem inventou a linguagem de programa\u00e7\u00e3o Ruby ?",
+    "correct_option": 1,
+    "options": [
+      "Rasmus Lerdorf",
+      "Yukihiro Matsumoto",
+      "Brendan Eich",
+      "Guido van Rossum"
+    ]
+  },
+  {
+    "question": "Quem inventou a linguagem de programa\u00e7\u00e3o Ruby ?",
+    "correct_option": 1,
+    "options": [
+      "Rasmus Lerdorf",
+      "Yukihiro Matsumoto",
+      "Brendan Eich",
+      "Guido van Rossum"
+    ]
+  },
+  {
+    "question": "Quem inventou a linguagem de programa\u00e7\u00e3o Ruby ?",
+    "correct_option": 1,
+    "options": [
+      "Rasmus Lerdorf",
+      "Yukihiro Matsumoto",
+      "Brendan Eich",
+      "Guido van Rossum"
+    ]
+  },
+  {
+    "question": "Quem inventou a linguagem de programa\u00e7\u00e3o Ruby ?",
+    "correct_option": 1,
+    "options": [
+      "Rasmus Lerdorf",
+      "Yukihiro Matsumoto",
+      "Brendan Eich",
+      "Guido van Rossum"
+    ]
+  },
+  {
+    "question": "Quem inventou a linguagem de programa\u00e7\u00e3o Ruby ?",
+    "correct_option": 1,
+    "options": [
+      "Rasmus Lerdorf",
+      "Yukihiro Matsumoto",
+      "Brendan Eich",
+      "Guido van Rossum"
+    ]
+  },
+  {
+    "question": "Quem inventou a linguagem de programa\u00e7\u00e3o Ruby ?",
+    "correct_option": 1,
+    "options": [
+      "Rasmus Lerdorf",
+      "Yukihiro Matsumoto",
+      "Brendan Eich",
+      "Guido van Rossum"
+    ]
+  },
+  {
+    "question": "Quem inventou a linguagem de programa\u00e7\u00e3o Ruby ?",
+    "correct_option": 1,
+    "options": [
+      "Rasmus Lerdorf",
+      "Yukihiro Matsumoto",
+      "Brendan Eich",
+      "Guido van Rossum"
+    ]
+  },
+  {
+    "question": "Quem inventou a linguagem de programa\u00e7\u00e3o Ruby ?",
+    "correct_option": 1,
+    "options": [
+      "Rasmus Lerdorf",
+      "Yukihiro Matsumoto",
+      "Brendan Eich",
+      "Guido van Rossum"
+    ]
+  },
+  {
+    "question": "Quem inventou a linguagem de programa\u00e7\u00e3o Ruby ?",
+    "correct_option": 1,
+    "options": [
+      "Rasmus Lerdorf",
+      "Yukihiro Matsumoto",
+      "Brendan Eich",
+      "Guido van Rossum"
+    ]
+  },
+  {
+    "question": "Quem inventou a linguagem de programa\u00e7\u00e3o Ruby ?",
+    "correct_option": 1,
+    "options": [
+      "Rasmus Lerdorf",
+      "Yukihiro Matsumoto",
+      "Brendan Eich",
+      "Guido van Rossum"
+    ]
+  }
+]
