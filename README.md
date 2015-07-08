@@ -6,6 +6,8 @@
 
 ### Using Python Bot
 ###### Available Commands:
+* /enviaFace: Send random post of facebook fan pages: Python Brasil, Loucos por Python, Minuto Python.
+* /enviaArtigo: Send random post about Python.
 * /enviaGithub: Sends a random python repository.
 * /buscarGithub "Text": Type text to search for a repository on github without quotes.
 * /enviaStack: Sends a random stackoverflow about Python.
@@ -14,7 +16,7 @@
 
 ### Using SMS Bot - Only Brazil
 ###### Available Commands:
-* /enviaSMS 11999999999 Hello: Send an SMS to any Brazil cellphone. Need an account in [Sinch](http://sinch.com) and credits, do not use App in Sandbox.
+* /enviarSMS 11999999999 Hello: Send an SMS to any Brazil cellphone. Need an account in [Sinch](http://sinch.com) and credits, do not use App in Sandbox.
 
 ### Como acessar Python Bot
 * Faça o [Download](http://telegram.org) do Telegram para seu device.
@@ -22,6 +24,8 @@
 
 ### Como usar Python Bot
 ###### Comandos disponíveis:
+* /enviaFace: Envia um post aleatório das páginas: Python Brasil, Loucos por Python, Minuto Python.
+* /enviaArtigo: Envia um post aleatório sobre Python.
 * /enviaGithub: Envia um repo de python aleatório.
 * /buscarGithub "Texto": Digite um texto para buscar um repo no github sem aspas.
 * /enviaStack: Envia um stackoverflow randomico sobre Python.
@@ -30,4 +34,4 @@
 
 ### Como usar SMS Bot
 ###### Comandos disponíveis:
-* /enviaSMS 11999999999 Olá tudo bem?: Envia um SMS para qualquer celular do brasil. obs: Necessário uma conta no [Sinch](http://sinch.com) e créditos, não usar App em Sandbox.
+* /enviarSMS 11999999999 Olá tudo bem?: Envia um SMS para qualquer celular do brasil. obs: Necessário uma conta no [Sinch](http://sinch.com) e créditos, não usar App em Sandbox.
