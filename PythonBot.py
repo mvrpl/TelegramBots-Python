@@ -13,7 +13,7 @@ from xml.dom import minidom
 
 def FacebookPost():
     pages = ['pythonbrasil', '1658435974378579', 'minutopython']
-    url = "https://graph.facebook.com/%s/posts?limit=50&access_token=%s" % (random.choice(pages), tokens.graph_api_token)
+    url = "https://graph.facebook.com/%s/posts?limit=25&access_token=%s" % (random.choice(pages), tokens.graph_api_token)
     json_data = json.loads(requests.get(url).content)
     random_post = random.randint(0, len(json_data['data']))
     if 'message' in json_data['data'][random_post]:
@@ -23,6 +23,7 @@ def FacebookPost():
     status_id = message_id.split('_')[1]
     post_link = 'https://www.facebook.com/%s/posts/%s' % (org_id, status_id)
     return '%s\n%s' % (content,post_link)
+
 
 def Rand_Posts():
     blogs_feeds = ['http://pythonclub.com.br/feeds/all.atom.xml', 'http://brsource.com.br/blog/feed/']
@@ -120,7 +121,7 @@ while True:
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=quiz('', update['message']['chat']['id'], update['message']['from']['first_name']) ))
                 if u'/respQuiz' in update['message']['text']:
                     try:
-                        requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=quiz(update['message']['text'][-1], update['message']['chat']['id'], update['message']['from']['first_name']) ))
+                        requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=quiz(update['message']['text'].replace('@TelePyBot', '')[-1], update['message']['chat']['id'], update['message']['from']['first_name']) ))
                     except IndexError:
                         requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text='Envie uma opção' ))
                         continue

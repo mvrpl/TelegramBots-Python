@@ -113,5 +113,25 @@
       "3650 days, 0:00:00",
       "5475 days, 0:00:00"
     ]
+  },
+  {
+    "question": "Qual banco de dados \u00E9 n\u00E3o-relacional ?",
+    "correct_option": 2,
+    "options": [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "SQLite"
+    ]
+  },
+  {
+    "question": "Qual a porta default do MongoDB",
+    "correct_option": 0,
+    "options": [
+      "27017",
+      "21017",
+      "3306",
+      "5432"
+    ]
   }
 ]
