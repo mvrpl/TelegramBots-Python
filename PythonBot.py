@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from datetime import datetime
 import string
 import requests
 import json
@@ -53,20 +52,30 @@ def Rand_Posts():
         except IndexError:
             Rand_Posts()
 
-def quiz(answer):
+
+def quiz(answer, chat_id, name_user):
+    if os.path.isfile('question_%s.txt' % (chat_id)) == True:
+        file = open('question_%s.txt' % (chat_id), 'r')
+        id_question = pickle.load(file)
+        file.close()
+    else:
+        id_question = 0
     questions_json = json.load(open('questions.json', 'r'))
-    question_info = questions_json[datetime.now().hour]
-    optionLetters = string.ascii_lowercase[:len(question_info['options'])]
-    options_output = '\n'.join('%s: %s' % (letter, answer) for letter, answer in zip(optionLetters, question_info['options']))
+    question_info = questions_json[id_question]
+    optionLetters = string.ascii_uppercase[:len(question_info['options'])]
+    options_output = '\n'.join('/respQuiz%s: %s' % (letter, answer) for letter, answer in zip(optionLetters.upper(), question_info['options']))
     if len(answer) > 0:
         if answer == optionLetters[question_info['correct_option']]:
-            return 'Acertou!\n%s\nResposta correta: %s' % (question_info['question'], question_info['options'][question_info['correct_option']])
+            file = open('question_%s.txt' % (chat_id), 'w')
+            pickle.dump(random.randint(0, len(questions_json)-1), file)
+            file.close()
+            return u'Acertou!, %s\n%s\nResposta correta: %s\n/enviaQuiz para próxima questão.' % (name_user, question_info['question'], question_info['options'][question_info['correct_option']])
         elif answer not in optionLetters:
-            return u'Opção não existe!'
+            return u'%s, Opção inválida!' % (name_user)
         else:
-            return 'Errou'
+            return u'Errou %s' % (name_user)
     else:
-        return u'%s\n%s\n\nEnvie /respQuiz "letra" sem aspas.' % (question_info['question'], options_output)
+        return u'%s\n%s' % (question_info['question'], options_output)
 
 twitter = Twitter(auth=OAuth(tokens.access_key, tokens.access_secret, tokens.consumer_key, tokens.consumer_secret))
 
@@ -92,7 +101,7 @@ while True:
                 continue
             try:
                 if u'/start' in update['message']['text']:
-                    help_bot = u'Olá\nComandos disponíveis:\n/enviaFace: Envia um post aleatório de páginas sobre Python.\n/enviaArtigo: Envia um artigo aletório sobre Python & cia.\n/enviaGithub: Envia um repo de python aleatório.\n/buscarGithub "Texto": Digite um texto para buscar um repo no github sem aspas.\n/enviaStack: Envia um stackoverflow randomico sobre Python.\n/sobrePython: Envia artigo da Wikipedia sobre Python.\n/enviaTwitter: Envia um tweet mais recente com a hashtag Python.'
+                    help_bot = u'Olá\nComandos disponíveis:\n/enviaQuiz: envia uma questão sobre Python aleatória.\n/enviaFace: Envia um post aleatório de páginas sobre Python.\n/enviaArtigo: Envia um artigo aletório sobre Python & cia.\n/enviaGithub: Envia um repo de python aleatório.\n/buscarGithub "Texto": Digite um texto para buscar um repo no github sem aspas.\n/enviaStack: Envia um stackoverflow randomico sobre Python.\n/sobrePython: Envia artigo da Wikipedia sobre Python.\n/enviaTwitter: Envia um tweet mais recente com a hashtag Python.'
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=help_bot ))
                 if u'/enviaStack' in update['message']['text']:
                     try:
@@ -108,11 +117,10 @@ while True:
                 if u'/enviaArtigo' in update['message']['text']:
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=Rand_Posts() ))
                 if u'/enviaQuiz' in update['message']['text']:
-                    requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=quiz('') ))
+                    requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=quiz('', update['message']['chat']['id'], update['message']['from']['first_name']) ))
                 if u'/respQuiz' in update['message']['text']:
-                    keyword = update['message']['text'].split(' ', 1)
                     try:
-                        requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=quiz(keyword[1]) ))
+                        requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=quiz(update['message']['text'][-1], update['message']['chat']['id'], update['message']['from']['first_name']) ))
                     except IndexError:
                         requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text='Envie uma opção' ))
                         continue
