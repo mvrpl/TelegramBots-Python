@@ -6,6 +6,7 @@
 
 ### Using Python Bot
 ###### Available Commands:
+* /enviaQuiz: Send random question about python.
 * /enviaFace: Send random post of facebook fan pages: Python Brasil, Loucos por Python, Minuto Python.
 * /enviaArtigo: Send random post about Python.
 * /enviaGithub: Sends a random python repository.
@@ -24,6 +25,7 @@
 
 ### Como usar Python Bot
 ###### Comandos disponíveis:
+* /enviaQuiz: Envia uma questão sobre Python aleatória.
 * /enviaFace: Envia um post aleatório das páginas: Python Brasil, Loucos por Python, Minuto Python.
 * /enviaArtigo: Envia um post aleatório sobre Python.
 * /enviaGithub: Envia um repo de python aleatório.
