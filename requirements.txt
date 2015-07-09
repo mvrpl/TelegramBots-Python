@@ -1,0 +1,3 @@
+requests == 2.3.0.egg
+sinchsms == 1.0.3.egg
+python_twitter == 2.2
