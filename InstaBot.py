@@ -38,16 +38,16 @@ while True:
                     img = open(filename+file_ext, 'rb')
                     requests.post(url + 'sendPhoto', files={'photo': img}, data={'chat_id': update['message']['chat']['id'], 'caption': location_photos['data'][rand_id]['link']})
                     os.unlink(filename+file_ext)
-                except IndexError:
-                    requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text='Nada Encontrado' ))
+                except:
+                    requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text='Nothing found\nNada Encontrado' ))
             try:
                 print(update['message']['text'])
             except:
                 pass
             try:
                 if u'/start' in update['message']['text']:
-                    help_bot_en = u'Hi\nAvailable commands:\n/hashtag "riodejaneiro": send random photo with hashtag.\n\nLocation: Send your location to get a photo near you.\n\n'
-                    help_bot = u'Olá\nComandos disponíveis:\n/hashtag "riodejaneiro": envia uma foto aleatória com a hashtag.\n\nLocalização: Envie sua localização para receber uma foto perto de você.'
+                    help_bot_en = u'Hi\nAvailable commands:\n/hashtag dogs to sending random photo with hashtag.\n\nLocation: Send your location to get a photo near you.\n\n'
+                    help_bot = u'Olá\nComandos disponíveis:\n/hashtag riodejaneiro para enviar uma foto aleatória com a hashtag.\n\nLocalização: Envie sua localização para receber uma foto perto de você.'
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=help_bot_en+help_bot ))
                 if u'/hashtag' in update['message']['text']:
                     try:
@@ -63,7 +63,9 @@ while True:
                         requests.post(url + 'sendPhoto', files={'photo': img}, data={'chat_id': update['message']['chat']['id'], 'caption': tags_json['data'][rand_id]['link']})
                         os.unlink(filename+file_ext)
                     except:
-                        requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text='Nada Encontrado' ))
+                        help_hashtag = open('help_hashtag.png', 'rb')
+                        requests.post(url + 'sendPhoto', files={'photo': help_hashtag}, data={'chat_id': update['message']['chat']['id'], 'caption': u'Help use /hashtag command.\nComo usar comando /hashtag.'})
+                        requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=u'Example: /hashtag moon\nExemplo: /hashtag lua' ))
             except KeyError as e:
                 print(e)
                 continue
