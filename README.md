@@ -1,5 +1,10 @@
 # TelegramBots
 
+### My Contacts | Meus Contatos
+* Email: mvro.dev@gmail.com
+* Twitter: @mvro_dev
+* Telegram: [@marcos_dev](http://telegram.me/marcos_dev)
+
 ### Accessing Python Bot
 * [Download](http://telegram.org) Telegram app for your device.
 * Add [@TelePyBot](http://telegram.me/TelePyBot) and talk.
