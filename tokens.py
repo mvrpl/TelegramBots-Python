@@ -6,7 +6,7 @@ telegram_bot_python = '********:***********************'
 # Telegram SMS Bot Token API
 telegram_bot_sms = '********:***********************'
 
-# Telegram SMS Bot Token API
+# Telegram Instagram Bot Token API
 telegram_bot_instagram = '********:***********************'
 
 # Twitter Tokens
