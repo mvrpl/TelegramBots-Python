@@ -15,6 +15,13 @@
 * /sobrePython: Send Wikipedia article about Python.
 * /enviaTwitter: Send a recent tweet with the hashtag Python.
 
+### Using Instagram Bot
+###### Available Commands:
+* [Download](http://telegram.org) Telegram app for your device.
+* Add [@InstagramTeleBot](http://telegram.me/InstagramTeleBot) and talk.
+* /hashtag newyork To sending random photo with hashtag.
+* Send location (only on smartphone) to get a photo near you.
+
 ### Using SMS Bot - Only Brazil
 ###### Available Commands:
 * /enviarSMS 11999999999 Hello: Send an SMS to any Brazil cellphone. Need an account in [Sinch](http://sinch.com) and credits, do not use App in Sandbox.
@@ -33,6 +40,13 @@
 * /enviaStack: Envia um stackoverflow randomico sobre Python.
 * /sobrePython: Envia artigo da Wikipedia sobre Python.
 * /enviaTwitter: Envia um tweet mais recente com a hashtag Python
+
+### Como usar Instagram Bot
+###### Comandos disponíveis:
+* Faça o [Download](http://telegram.org) do Telegram para seu device.
+* Adicione [@InstagramTeleBot](http://telegram.me/InstagramTeleBot) e converse.
+* /hashtag riodejaneiro Para enviar uma foto aleatória com a hashtag.
+* Envie localização (somente no smartphone) para receber uma foto próxima ao local.
 
 ### Como usar SMS Bot
 ###### Comandos disponíveis:
