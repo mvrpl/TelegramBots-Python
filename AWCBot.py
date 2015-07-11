@@ -24,19 +24,22 @@ while True:
             pickle.dump(last_update, file)
             file.close()
             print(update['message']['text'])
-            if u'/metar' in update['message']['text']:
-                keyword = update['message']['text'].split(' ', 1)
-                url_calling = 'http://aviationweather.gov/metar/data?ids='+keyword[1]+'&format=raw&date=0&hours=0'
-                page = urllib2.urlopen(url_calling).read()
-                bsoup = BeautifulSoup(page)
-                result = bsoup.find('code').text
-                requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=result ))
-            if u'/taf' in update['message']['text']:
-                keyword = update['message']['text'].split(' ', 1)
-                url_calling = 'http://aviationweather.gov/taf/data?ids='+keyword[1]+'&format=raw&submit=Get+TAF+data'
-                page = urllib2.urlopen(url_calling).read()
-                bsoup = BeautifulSoup(page)
-                result = bsoup.find('code').text
-                requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=result ))
+            try:
+                if u'/metar' in update['message']['text']:
+                    keyword = update['message']['text'].split(' ', 1)
+                    url_calling = 'http://aviationweather.gov/metar/data?ids='+keyword[1]+'&format=raw&date=0&hours=0'
+                    page = urllib2.urlopen(url_calling).read()
+                    bsoup = BeautifulSoup(page)
+                    result = bsoup.find('code').text
+                    requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=result ))
+                if u'/taf' in update['message']['text']:
+                    keyword = update['message']['text'].split(' ', 1)
+                    url_calling = 'http://aviationweather.gov/taf/data?ids='+keyword[1]+'&format=raw&submit=Get+TAF+data'
+                    page = urllib2.urlopen(url_calling).read()
+                    bsoup = BeautifulSoup(page)
+                    result = bsoup.find('code').text
+                    requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=result ))
+            except:
+                requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text='Nothing found.' ))
 
     sleep(3)
