@@ -9,6 +9,9 @@ telegram_bot_sms = '********:***********************'
 # Telegram Instagram Bot Token API
 telegram_bot_instagram = '********:***********************'
 
+# Telegram Wallpapers Bot Token API
+telegram_bot_wallpapers = '********:***********************'
+
 # Twitter Tokens
 consumer_key = "********:***********************"
 consumer_secret = "********:***********************"

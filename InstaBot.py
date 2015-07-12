@@ -19,7 +19,10 @@ else:
 url = 'https://api.telegram.org/bot%s/' % tokens.telegram_bot_instagram
 
 while True:
-    get_updates = json.loads(requests.get(url + 'getUpdates?offset='+str(last_update)).content)
+    try:
+        get_updates = json.loads(requests.get(url + 'getUpdates?offset='+str(last_update)).content)
+    except:
+        continue
     for update in get_updates['result']:
         if last_update < update['update_id']:
             last_update = update['update_id']
