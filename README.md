@@ -11,6 +11,7 @@
 
 ### Using Python Bot
 ###### Available Commands:
+* /enviaKickstarter: Send random project in KickStarter about python.
 * /enviaQuiz: Send random question about python.
 * /enviaFace: Send random post of facebook fan pages: Python Brasil, Loucos por Python, Minuto Python.
 * /enviaArtigo: Send random post about Python.
@@ -27,9 +28,13 @@
 * /hashtag newyork To sending random photo with hashtag.
 * Send location (only on smartphone) to get a photo near you.
 
-### Using SMS Bot - Only Brazil
+### SMS Bot
 ###### Available Commands:
-* /enviarSMS 11999999999 Hello: Send an SMS to any Brazil cellphone. Need an account in [Sinch](http://sinch.com) and credits, do not use App in Sandbox.
+* /enviarSMS 5511999999999 Hello: Send an SMS to any Brazil cellphone. Need an account in [Sinch](http://sinch.com) and credits, do not use App in Sandbox.
+
+### Wallpapers Bot
+###### Available Commands:
+* /randomwall: Send random wallpaper.
 
 ### Como acessar Python Bot
 * Faça o [Download](http://telegram.org) do Telegram para seu device.
@@ -37,6 +42,7 @@
 
 ### Como usar Python Bot
 ###### Comandos disponíveis:
+* /enviaKickstarter: Envia um projeto aleatório sobre python.
 * /enviaQuiz: Envia uma questão sobre Python aleatória.
 * /enviaFace: Envia um post aleatório das páginas: Python Brasil, Loucos por Python, Minuto Python.
 * /enviaArtigo: Envia um post aleatório sobre Python.
@@ -53,6 +59,10 @@
 * /hashtag riodejaneiro Para enviar uma foto aleatória com a hashtag.
 * Envie localização (somente no smartphone) para receber uma foto próxima ao local.
 
-### Como usar SMS Bot
+### SMS Bot
 ###### Comandos disponíveis:
 * /enviarSMS 11999999999 Olá tudo bem?: Envia um SMS para qualquer celular do brasil. obs: Necessário uma conta no [Sinch](http://sinch.com) e créditos, não usar App em Sandbox.
+
+### Wallpapers Bot
+###### Comandos disponíveis:
+* /randomwall: Envia um papel de parede aleatório.

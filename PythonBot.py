@@ -24,6 +24,17 @@ def FacebookPost():
     post_link = 'https://www.facebook.com/%s/posts/%s' % (org_id, status_id)
     return '%s\n%s' % (content,post_link)
 
+def KickStarter():
+    url = "https://www.kickstarter.com/projects/search.json?search=&term=python"
+    json_data = json.loads(requests.get(url).content)
+    random_post = random.randint(0, len(json_data['projects'])-1)
+    project_name = json_data['projects'][random_post]['name']
+    project_blurb = json_data['projects'][random_post]['blurb']
+    project_creator = json_data['projects'][random_post]['creator']['name']
+    project_category = json_data['projects'][random_post]['category']['name']
+    project_url = json_data['projects'][random_post]['urls']['web']['project']
+    return u'Título: %s\nDescrição: %s\nPor: %s\nCategoria: %s\nLink: %s' % (project_name, project_blurb, project_creator, project_category, project_url)
+
 
 def Rand_Posts():
     blogs_feeds = ['http://pythonclub.com.br/feeds/all.atom.xml', 'http://brsource.com.br/blog/feed/']
@@ -105,7 +116,7 @@ while True:
                 continue
             try:
                 if u'/start' in update['message']['text']:
-                    help_bot = u'Olá\nComandos disponíveis:\n/enviaQuiz: envia uma questão sobre Python aleatória.\n/enviaFace: Envia um post aleatório de páginas sobre Python.\n/enviaArtigo: Envia um artigo aletório sobre Python & cia.\n/enviaGithub: Envia um repo de python aleatório.\n/buscarGithub "Texto": Digite um texto para buscar um repo no github sem aspas.\n/enviaStack: Envia um stackoverflow randomico sobre Python.\n/sobrePython: Envia artigo da Wikipedia sobre Python.\n/enviaTwitter: Envia um tweet mais recente com a hashtag Python.'
+                    help_bot = u'Olá\nComandos disponíveis:\n/enviaKickstarter: envia um projeto de python aleatoriamente.\n/enviaQuiz: envia uma questão sobre Python aleatória.\n/enviaFace: Envia um post aleatório de páginas sobre Python.\n/enviaArtigo: Envia um artigo aletório sobre Python & cia.\n/enviaGithub: Envia um repo de python aleatório.\n/buscarGithub "Texto": Digite um texto para buscar um repo no github sem aspas.\n/enviaStack: Envia um stackoverflow randomico sobre Python.\n/sobrePython: Envia artigo da Wikipedia sobre Python.\n/enviaTwitter: Envia um tweet mais recente com a hashtag Python.'
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=help_bot ))
                 if u'/enviaStack' in update['message']['text']:
                     try:
@@ -118,6 +129,8 @@ while True:
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=send_random ))
                 if u'/sobrePython' in update['message']['text']:
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text='https://pt.wikipedia.org/wiki/Python' ))
+                if u'/enviaKickstarter' in update['message']['text']:
+                    requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=KickStarter() ))
                 if u'/enviaArtigo' in update['message']['text']:
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=Rand_Posts() ))
                 if u'/enviaQuiz' in update['message']['text']:

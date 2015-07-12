@@ -30,7 +30,7 @@ while True:
                     requests.get(url + 'sendMessage', params=dict(chat_id=update['message']['chat']['id'], text=help_bot ))
                 if u'/enviarSMS' in update['message']['text']:
                     keyword = update['message']['text'].split(' ', 2)
-                    number = '+55'+keyword[1]
+                    number = '+'+keyword[1]
                     message = keyword[2]
                     client = SinchSMS(tokens.key_sinch, tokens.secret_sinch)
                     client.send_message(number, message)
