@@ -1,8 +1,6 @@
 # TelegramBots
 
 ### My Contacts | Meus Contatos
-* Email: mvro.dev@gmail.com
-* Twitter: [@mvro_dev](https://twitter.com/mvro_dev)
 * Telegram: [@marcos_dev](http://telegram.me/marcos_dev)
 
 ### Accessing Python Bot

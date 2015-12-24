@@ -10,13 +10,13 @@
     ]
   },
   {
-    "question": "s = \"ABC\"\nprint(s + \"D\" * 4), o que ser\u00E1 impresso ?",
-    "correct_option": 1,
+    "question": "print(type(1/2))\nO ser\u00E1 impresso? python vers\u00E3o 3.x",
+    "correct_option": 2,
     "options": [
-      "ABC = ABCABCABCAB",
-      "ABCx4 = ABCABCABCABC",
-      "ABCx4 = ABCABCAB",
-      "ABCx = ABCABCABC"
+      "<type 'int'>",
+      "<type 'number'>",
+      "<type 'float'>",
+      "<type 'double'>"
     ]
   },
   {
@@ -125,13 +125,93 @@
     ]
   },
   {
-    "question": "Qual a porta default do MongoDB",
+    "question": "x = \"foo \"\ny = 2\nprint(x + y)\no que ser\u00E1 impresso?",
+    "correct_option": 3,
+    "options": [
+      "foo",
+      "foo foo",
+      "foo 2",
+      "Uma exce\u00E7\u00E3o \u00E9 lan\u00E7ada"
+    ]
+  },
+  {
+    "question": "name = \"snow storm\"\nname[5] = 'X'\nprint(name)\no que ser\u00E1 impresso ?",
+    "correct_option": 3,
+    "options": [
+      "snow storm",
+      "snowXstorm",
+      "snow Xtorm",
+      "ERROR, o c\u00F3digo n\u00E3o executa!"
+    ]
+  },
+  {
+    "question": "O que faz o c\u00F3digo abaixo?\nsys.path.append('/root/mods')",
+    "correct_option": 1,
+    "options": [
+      "Muda o local que o execut\u00E1vel \u00E9 executado a partir python",
+      "Adiciona um novo diret\u00F3rio para procurar m\u00F3dulos python que s\u00E3o importados",
+      "Altera o local onde os sub-processos s\u00E3o procurados depois que eles s\u00E3o lan\u00E7ados",
+      "ERROR, o c\u00F3digo n\u00E3o executa!"
+    ]
+  },
+  {
+    "question": "names = ['Ramesh', 'Rajesh', 'Roger', 'Ivan', 'Nico']\nQuais das seguintes instru\u00E7\u00F5es de impress\u00E3o ir\u00E1 imprimir todos os nomes da lista em uma linha separada?",
     "correct_option": 0,
     "options": [
-      "27017",
-      "21017",
-      "3306",
-      "5432"
+      "print(\"\\n\".join(names))",
+      "print(names.join(\"\\n\"))",
+      "print names.join(\"%s\\n\", names)",
+      "print(names.append(\"\\n\"))"
+    ]
+  },
+  {
+    "question": "foo = {}\nprint(type(foo))\no que ser\u00E1 impresso?",
+    "correct_option": 2,
+    "options": [
+      "set",
+      "list",
+      "dict",
+      "tuple"
+    ]
+  },
+  {
+    "question": "names = ['Amir', 'Barry', 'Chales', 'Dao']\nprint(names[-1][-1])\no que ser\u00E1 impresso?",
+    "correct_option": 3,
+    "options": [
+      "A",
+      "r",
+      "Amir",
+      "o"
+    ]
+  },
+  {
+    "question": "a = [1,2,3,None,(),[],]\nprint(len(a))\no que ser\u00E1 impresso?",
+    "correct_option": 1,
+    "options": [
+      "4",
+      "6",
+      "5",
+      "7"
+    ]
+  },
+  {
+    "question": "nums = set([1,1,2,3,3,3,4])\nprint(len(nums))\no que ser\u00E1 impresso?",
+    "correct_option": 0,
+    "options": [
+      "4",
+      "2",
+      "5",
+      "7"
+    ]
+  },
+  {
+    "question": "x = sum(range(5))\nprint(x)\no que ser\u00E1 impresso?",
+    "correct_option": 3,
+    "options": [
+      "4",
+      "3",
+      "5",
+      "10"
     ]
   }
 ]
