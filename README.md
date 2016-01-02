@@ -7,7 +7,7 @@
 * [Download](http://telegram.org) Telegram app for your device.
 * Add [@TelePyBot](http://telegram.me/TelePyBot) and talk.
 
-### Using Python Bot
+### Using Python Bot [Online]
 ###### Available Commands:
 * /enviaKickstarter: Send random project in KickStarter about python.
 * /enviaQuiz: Send random question about python.
@@ -19,7 +19,7 @@
 * /sobrePython: Send Wikipedia article about Python.
 * /enviaTwitter: Send a recent tweet with the hashtag Python.
 
-### Using Instagram Bot
+### Using Instagram Bot [Offline]
 ###### Available Commands:
 * [Download](http://telegram.org) Telegram app for your device.
 * Add [@InstagramTeleBot](http://telegram.me/InstagramTeleBot) and talk.
@@ -34,7 +34,7 @@
 ###### Available Commands:
 * /randomwall: Send random wallpaper.
 
-### Como acessar Python Bot
+### Como acessar Python Bot [Online]
 * Faça o [Download](http://telegram.org) do Telegram para seu device.
 * Adicione [@TelePyBot](http://telegram.me/TelePyBot) e converse.
 
@@ -50,7 +50,7 @@
 * /sobrePython: Envia artigo da Wikipedia sobre Python.
 * /enviaTwitter: Envia um tweet mais recente com a hashtag Python
 
-### Como usar Instagram Bot
+### Como usar Instagram Bot [Offline]
 ###### Comandos disponíveis:
 * Faça o [Download](http://telegram.org) do Telegram para seu device.
 * Adicione [@InstagramTeleBot](http://telegram.me/InstagramTeleBot) e converse.
