@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__author__ = 'Marcos Vinícius Rodrigues - https://github.com/marcosrodev'
+__author__ = 'Marcos Vinícius Rodrigues - https://github.com/mvrpl'
 __version__ = 2.0
 __doc__ = '''Bot de telegram sobre python com quiz game, posts de facebook/blogs, projetos kickstarter e projetos github.'''
 import string
